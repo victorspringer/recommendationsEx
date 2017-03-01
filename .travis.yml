@@ -5,6 +5,8 @@ otp_release:
   - 19.0
 services:
   - neo4j
+jdk:
+  - oraclejdk8
 node_js:
   - "5"
 sudo: true
