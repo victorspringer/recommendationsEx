@@ -4,8 +4,8 @@ defmodule ProductControllerTest do
     # alias ZionRecs.Router
 
     # @opts Router.init([])
-    # test 'listing aggregation:click products data' do
-    #     conn = conn(:get, "/products/aggregation:click")
+    # test 'listing last seen products' do
+    #     conn = conn(:get, "/v1/products/last_seen/U12345")
     #     response = Router.call(conn, @opts)
     #     assert response.status == 200
     # end
