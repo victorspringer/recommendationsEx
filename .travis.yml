@@ -1,21 +1,28 @@
-language: java
-jdk:
-  - oraclejdk8
-services:
-  - neo4j
-sudo: true
+sudo: required
+services: docker
+language: elixir
+
+addons:
+  apt:
+    sources:
+      - ubuntu-toolchain-r-test
+    packages:
+      - g++-6
+      - ninja-build
+cache:
+  directories:
+    - $HOME/cmake
 env:
-  - NEO4J_VERSION="3.1.1"
+  global:
+    - PATH=$HOME/cmake/bin:$PATH
+    - CXX=g++-6
+    - CC=gcc-6
+    - NEO4J_VERSION=3.1
+
+elixir:
+  - 1.4
+
 before_install:
-  - nvm install 5.11.0
-  - nvm use 5.11.0
-  # install Neo4j manually:
-  - wget dist.neo4j.org/neo4j-community-$NEO4J_VERSION-unix.tar.gz
-  - tar -xzf neo4j-community-$NEO4J_VERSION-unix.tar.gz
-  - neo4j-community-$NEO4J_VERSION/bin/neo4j start
-install:
-  - npm install
-before_script:
-  - export DISPLAY=:99.0
-  - sh -e /etc/init.d/xvfb start
-  - curl -vX POST http://neo4j:neo4j@localhost:7474/user/neo4j/password -d "password=root"
+  - if [ ! -d "$HOME/cmake/bin" ]; then wget --no-check-certificate https://cmake.org/files/v3.5/cmake-3.5.2-Linux-x86_64.sh && sh cmake-3.5.2-Linux-x86_64.sh --prefix=$HOME/cmake --exclude-subdir; fi
+  - docker run --name neo4j -d -p 7687:7687 -e 'NEO4J_AUTH=none' neo4j:$NEO4J_VERSION
+  - docker logs -f neo4j | sed /Bolt\ enabled/q
