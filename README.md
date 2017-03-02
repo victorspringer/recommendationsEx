@@ -1,7 +1,7 @@
 # ZionRecs
 [![Build Status](https://travis-ci.org/victorspringer/zionRecs.svg?branch=master)](https://travis-ci.org/victorspringer/zionRecs)
 
-This is an under development API built with Elixir Phoenix and Neo4j graph database.
+This is an under development recommendation engine built with Elixir Phoenix and Neo4j graph database.
 
 The purpose of this API is to provide product recommendations based on users navigation history through your e-commerce products.
 
