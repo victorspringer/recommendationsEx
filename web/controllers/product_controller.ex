@@ -87,8 +87,8 @@ defmodule ZionRecs.ProductController do
     query = "
       MATCH (product:Product)<-[:CLICKED]-(user:User),
         (user)-[:CLICKED]->(clicked_product:Product {product_id: \"#{product_id}\"})
-      WHERE (clicked_product.clicked_at - product.clicked_at) <= 1800000
-        AND (clicked_product.clicked_at - product.clicked_at) > -1800000
+      WHERE (clicked_product.clicked_at - product.clicked_at) <= 180000
+        AND (clicked_product.clicked_at - product.clicked_at) > -180000
       WITH product.product_id AS product_id, product AS product
       ORDER BY product.clicked_at DESC
       
