@@ -40,9 +40,9 @@ defmodule ZionRecs.ProductController do
     db_conn = Repo.conn
 
     query = "
-      MATCH (user:User {user_id: \"#{user_id}\"})-[:CLICKED]->(product:Product)
+      MATCH (user:User {user_id: \"#{user_id}\"})-[clicked:CLICKED]->(product:Product)
       WITH product.product_id AS product_id, product AS product
-      ORDER BY product.clicked_at DESC
+      ORDER BY clicked.clicked_at DESC
       
       RETURN DISTINCT product_id LIMIT #{limit}
     "
