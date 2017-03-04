@@ -11,15 +11,15 @@ defmodule ZionRecs.ProductController do
     category_id = category_params["category_id"]
     category = category_params |> Utils.encode_params
 
+    product_id = product_params["product_id"]
     product = product_params |> Utils.encode_params
 
     query = "
       MERGE (user:User {user_id: \"#{user_id}\"}) SET user = {#{user}}
       MERGE (category:Category {category_id: \"#{category_id}\"}) SET category = {#{category}}
-
-      CREATE (product:Product {#{product}, clicked_at: timestamp()}),
-        (user)-[:CLICKED]->(product),
-        (product)-[:BELONGS_TO]->(category)
+      MERGE (product:Product {product_id: \"#{product_id}\"}) SET product = {#{product}}
+      MERGE (product)-[:BELONGS_TO]->(category)
+      CREATE (user)-[:CLICKED {clicked_at: timestamp()}]->(product)
     "
 
     response = Repo.query!(db_conn, query)
@@ -64,7 +64,7 @@ defmodule ZionRecs.ProductController do
 
     query = "
       MATCH (product:Product)-[:BELONGS_TO]->(category:Category)
-      
+      WHERE category.category_id = \"#{category_id}\"
       RETURN COUNT(*) AS occurrence, product.product_id AS product_id
       ORDER BY occurrence DESC LIMIT #{limit}
     "
