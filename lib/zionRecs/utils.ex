@@ -1,4 +1,4 @@
-defmodule ZionRecs.Utils do
+defmodule RecommendationsEx.Utils do
   
   def encode_params(params) do
     Enum.map(params, fn({key, val}) ->

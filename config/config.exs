@@ -6,15 +6,15 @@
 use Mix.Config
 
 # General application configuration
-#config :zionRecs,
-#  ecto_repos: [ZionRecs.Repo]
+#config :recommendationsEx,
+#  ecto_repos: [RecommendationsEx.Repo]
 
 # Configures the endpoint
-config :zionRecs, ZionRecs.Endpoint,
+config :recommendationsEx, RecommendationsEx.Endpoint,
   url: [host: "localhost"],
   secret_key_base: "69XseFy0zebJRkekGH1nQsurxQpafhOav+ijiA0UTHnv5aV49nabjOvngN6fEKXb",
-  render_errors: [view: ZionRecs.ErrorView, accepts: ~w(json)],
-  pubsub: [name: ZionRecs.PubSub,
+  render_errors: [view: RecommendationsEx.ErrorView, accepts: ~w(json)],
+  pubsub: [name: RecommendationsEx.PubSub,
            adapter: Phoenix.PubSub.PG2]
 
 # Configures Elixir's Logger

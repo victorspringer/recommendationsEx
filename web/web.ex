@@ -1,12 +1,12 @@
-defmodule ZionRecs.Web do
+defmodule RecommendationsEx.Web do
   @moduledoc """
   A module that keeps using definitions for controllers,
   views and so on.
 
   This can be used in your application as:
 
-      use ZionRecs.Web, :controller
-      use ZionRecs.Web, :view
+      use RecommendationsEx.Web, :controller
+      use RecommendationsEx.Web, :view
 
   The definitions below will be executed for every view,
   controller, etc, so keep them short and clean, focused
@@ -20,11 +20,11 @@ defmodule ZionRecs.Web do
     quote do
       use Phoenix.Controller
 
-      alias ZionRecs.Utils
+      alias RecommendationsEx.Utils
       alias Bolt.Sips, as: Repo
 
-      import ZionRecs.Router.Helpers
-      import ZionRecs.Gettext
+      import RecommendationsEx.Router.Helpers
+      import RecommendationsEx.Gettext
     end
   end
 
@@ -35,9 +35,9 @@ defmodule ZionRecs.Web do
       # Import convenience functions from controllers
       import Phoenix.Controller, only: [get_csrf_token: 0, get_flash: 2, view_module: 1]
 
-      import ZionRecs.Router.Helpers
-      import ZionRecs.ErrorHelpers
-      import ZionRecs.Gettext
+      import RecommendationsEx.Router.Helpers
+      import RecommendationsEx.ErrorHelpers
+      import RecommendationsEx.Gettext
     end
   end
 
@@ -51,7 +51,7 @@ defmodule ZionRecs.Web do
     quote do
       use Phoenix.Channel
 
-      import ZionRecs.Gettext
+      import RecommendationsEx.Gettext
     end
   end
 

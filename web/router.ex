@@ -1,11 +1,11 @@
-defmodule ZionRecs.Router do
-  use ZionRecs.Web, :router
+defmodule RecommendationsEx.Router do
+  use RecommendationsEx.Web, :router
 
   pipeline :products do
     plug :accepts, ["json"]
   end
 
-  scope "/v1/products", ZionRecs do
+  scope "/v1/products", RecommendationsEx do
     pipe_through :products
 
     resources "/products", ProductController

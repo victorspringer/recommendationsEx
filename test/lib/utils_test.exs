@@ -1,7 +1,7 @@
 defmodule UtilsTest do
     use ExUnit.Case, async: true
     use Plug.Test
-    alias ZionRecs.Utils
+    alias RecommendationsEx.Utils
 
     test 'encode_params' do
         params = %{

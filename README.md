@@ -1,5 +1,5 @@
-# ZionRecs
-[![Build Status](https://travis-ci.org/victorspringer/zionRecs.svg?branch=master)](https://travis-ci.org/victorspringer/zionRecs)
+# RecommendationsEx
+[![Build Status](https://travis-ci.org/victorspringer/recommendationsEx.svg?branch=master)](https://travis-ci.org/victorspringer/recommendationsEx)
 
 This is an under development recommendation engine built with Elixir Phoenix and Neo4j graph database.
 

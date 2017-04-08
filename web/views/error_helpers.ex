@@ -1,4 +1,4 @@
-defmodule ZionRecs.ErrorHelpers do
+defmodule RecommendationsEx.ErrorHelpers do
   @moduledoc """
   Conveniences for translating and building error messages.
   """
@@ -21,9 +21,9 @@ defmodule ZionRecs.ErrorHelpers do
     #     dgettext "errors", "is invalid"
     #
     if count = opts[:count] do
-      Gettext.dngettext(ZionRecs.Gettext, "errors", msg, msg, count, opts)
+      Gettext.dngettext(RecommendationsEx.Gettext, "errors", msg, msg, count, opts)
     else
-      Gettext.dgettext(ZionRecs.Gettext, "errors", msg, opts)
+      Gettext.dgettext(RecommendationsEx.Gettext, "errors", msg, opts)
     end
   end
 end

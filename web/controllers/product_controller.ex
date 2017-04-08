@@ -1,5 +1,5 @@
-defmodule ZionRecs.ProductController do
-  use ZionRecs.Web, :controller
+defmodule RecommendationsEx.ProductController do
+  use RecommendationsEx.Web, :controller
 
   # Product click
   def create(conn, %{"user" => user_params, "category" => category_params, "product" => product_params}) do

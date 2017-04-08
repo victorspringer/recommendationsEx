@@ -1,7 +1,7 @@
 defmodule ProductControllerTest do
     # use ExUnit.Case, async: true
     # use Plug.Test
-    # alias ZionRecs.Router
+    # alias RecommendationsEx.Router
 
     # @opts Router.init([])
     # test 'listing last seen products' do

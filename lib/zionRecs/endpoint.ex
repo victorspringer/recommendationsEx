@@ -1,14 +1,14 @@
-defmodule ZionRecs.Endpoint do
-  use Phoenix.Endpoint, otp_app: :zionRecs
+defmodule RecommendationsEx.Endpoint do
+  use Phoenix.Endpoint, otp_app: :recommendationsEx
 
-  socket "/socket", ZionRecs.UserSocket
+  socket "/socket", RecommendationsEx.UserSocket
 
   # Serve at "/" the static files from "priv/static" directory.
   #
   # You should set gzip to true if you are running phoenix.digest
   # when deploying your static files in production.
   plug Plug.Static,
-    at: "/", from: :zionRecs, gzip: false,
+    at: "/", from: :recommendationsEx, gzip: false,
     only: ~w(css fonts images js favicon.ico robots.txt)
 
   # Code reloading can be explicitly enabled under the
@@ -33,8 +33,8 @@ defmodule ZionRecs.Endpoint do
   # Set :encryption_salt if you would also like to encrypt it.
   plug Plug.Session,
     store: :cookie,
-    key: "_zionRecs_key",
+    key: "_recommendationsEx_key",
     signing_salt: "hOs1+Leg"
 
-  plug ZionRecs.Router
+  plug RecommendationsEx.Router
 end

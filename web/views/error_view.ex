@@ -1,5 +1,5 @@
-defmodule ZionRecs.ErrorView do
-  use ZionRecs.Web, :view
+defmodule RecommendationsEx.ErrorView do
+  use RecommendationsEx.Web, :view
 
   def render("404.json", _assigns) do
     %{errors: %{detail: "Page not found"}}
