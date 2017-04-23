@@ -21,9 +21,9 @@ You can check your graph at [`Neo4j web interface`](http://localhost:7474)
 
 The current features of the API are:
 
-  * Last seen products (`/last_seen/:user_id`)
-  * Most viewed products in category (`/most_viewed/:category_id`)
-  * Who has viewed this, viewed also... (`/common_views/:product_id`)
+  * Last seen products - endpoint: `/last_seen/:user_id`
+  * Most viewed products in category - endpoint: `/most_viewed/:category_id`
+  * Who has viewed this, viewed also... - endpoint: `/common_views/:product_id`
 
 You can optionally add the query string parameter `?limit=:value` to set a custom number of results. The default value is 5.
 
