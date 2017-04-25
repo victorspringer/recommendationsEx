@@ -35,24 +35,23 @@ Ready to run in production? Please [check the deployment guides](http://www.phoe
 
 Besides that, it's possible to set whatever property you need.
 
-Here is an example of a post request sent via JavaScript:
+Here is an example of a post request sent via cURL:
 
-```javascript
-const xhr = new XMLHttpRequest();
-xhr.open('POST', 'http://localhost:4000/v1/products', true);
-xhr.setRequestHeader('Content-Type', 'application/json');
-xhr.send(JSON.stringify({
-  user: {
-    user_id: 'U12345',
-    foo: 'bar'
-  },
-  category: {
-    category_id: 'C12345',
-    bar: 'baz'
-  },
-  product: {
-    product_id: 'P12345',
-    etc: '...'
-  }
-}));
+```shell
+curl -H "Content-Type: application/json" -X POST -d \
+'{
+    "user": {
+        "user_id": "U12345",
+        "foo": "bar"
+    },,
+    "category": {
+        "category_id": "C12345",
+        "bar": "baz"
+    }
+    "product": {
+        "product_id": "P12345",
+        "etc": "..."
+    }
+}' \
+http://localhost:4000/v1/products
 ```
