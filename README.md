@@ -23,7 +23,7 @@ The current features of the API are:
 
   * Last seen products - endpoint: `/last_seen/:user_id`
   * Most viewed products in category - endpoint: `/most_viewed/:category_id`
-  * Who has viewed this, viewed also... - endpoint: `/common_views/:product_id`
+  * Who viewed this product, also viewed... - endpoint: `/common_views/:product_id`
 
 You can optionally add the query string parameter `?limit=:value` to set a custom number of results. The default value is 5.
 
